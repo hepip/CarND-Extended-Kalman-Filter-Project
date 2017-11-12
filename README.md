@@ -21,7 +21,15 @@ For a row containing lidar data, the columns are: sensor_type, x_measured, y_mea
 
 Whereas radar has three measurements (rho, phi, rhodot), lidar has two measurements (x, y).
 
-You will use the measurement values and timestamp in your Kalman filter algorithm. Groundtruth, which represents the actual path the bicycle took, is for calculating root mean squared error.
+The three main steps for programming a Kalman filter:
+
+1. Initializing Kalman filter variables
+2. Predicting where our object is going to be after a time step Δt
+3. Updating where our object is based on sensor measurements
+
+Then the prediction and update steps repeat themselves in a loop.
+
+To measure how well our Kalman filter performs, we will then calculate root mean squared error comparing the Kalman filter results with the provided ground truth.
 
 OUTPUT: values provided by the c++ program to the simulator
 
